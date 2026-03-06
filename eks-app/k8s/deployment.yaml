@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: publicsafety
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: publicsafety
+
+  template:
+    metadata:
+      labels:
+        app: publicsafety
+
+    spec:
+      containers:
+        - name: publicsafety
+          image: $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          ports:
+            - containerPort: 5000
