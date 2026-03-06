@@ -6,6 +6,7 @@ import psutil
 
 app = FASTAPI()
 
+
 APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 
 @app.get("/")
