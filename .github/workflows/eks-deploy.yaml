@@ -33,7 +33,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build -t "${{ env.ECR_REPOSITORY }}" .
+          docker build -t eks-app .
 
       - name: Tag the image
         run: |
