@@ -40,7 +40,7 @@ jobs:
 
       - name: Tag the image
         run: |
-          docker tag ${{ env.ECR_REPOSITORY }}:latest ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
+          docker tag eks-app:latest ${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
       - name: Push the image to ECR
         run: |
