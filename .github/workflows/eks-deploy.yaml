@@ -33,15 +33,15 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build -t $ECR_REPOSITORY .
+          docker build -t "${{ env.ECR_REPOSITORY }}" .
 
       - name: Tag the image
         run: |
-          docker tag $ECR_REPOSITORY:latest $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          docker tag ${{ env.ECR_REPOSITORY }}:latest $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
       - name: Push the image to ECR
         run: |
-          docker push $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          docker push $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
       # - name: Update kubeconfig
       #   run: |
