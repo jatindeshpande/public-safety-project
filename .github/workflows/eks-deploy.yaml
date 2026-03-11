@@ -46,12 +46,12 @@ jobs:
         run: |
           docker push $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:latest
 
-      # - name: Update kubeconfig
-      #   run: |
-      #     aws eks update-kubeconfig \
-      #     --region $AWS_REGION \
-      #     --name $CLUSTER_NAME
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig \
+          --region $AWS_REGION \
+          --name publicsafety-cluster
         
-      # - name: Deploy to EKS
-      #   run: |
-      #     kubectl apply -f k8s/
+      - name: Deploy to EKS
+        run: |
+          kubectl apply -f k8s/
