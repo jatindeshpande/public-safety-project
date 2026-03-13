@@ -20,4 +20,20 @@ spec:
         - name: publicsafety
           image: $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 2

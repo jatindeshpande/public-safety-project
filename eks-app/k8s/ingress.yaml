@@ -1,0 +1,12 @@
+# Internet
+#    ↓
+# Ingress Controller (ALB / NGINX)
+#    ↓
+# Ingress rules
+#    ↓
+# Services (ClusterIP)
+#    ↓
+# Pods
+
+# Normally we go with above approach but for but for simple application.
+# we are not using ingress since we are exposing service using LB
