@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: publicsafety
-          image: $ACCOUNT_ID.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          image: 861142265676.dkr.ecr.us-east-2.amazonaws.com/publicsafety-ecr:latest
           ports:
             - containerPort: 8000
           livenessProbe:
