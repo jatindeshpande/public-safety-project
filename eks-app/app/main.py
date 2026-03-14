@@ -10,7 +10,7 @@ APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 
 @app.get("/")
 def root():
-    return {"message": "CloudOps API running 🚀"}
+    return {"message": "DevOps API running 🚀"}
 
 @app.get("/health")
 def health():
