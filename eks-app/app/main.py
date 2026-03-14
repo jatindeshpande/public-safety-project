@@ -4,7 +4,7 @@ import os
 import time
 import psutil
 
-app = FASTAPI()
+app = FastAPI()
 
 APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 
