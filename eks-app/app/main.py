@@ -1,4 +1,4 @@
-from fastapi import FASTAPI
+from fastapi import FastAPI
 import socket
 import os
 import time
