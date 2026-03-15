@@ -19,6 +19,7 @@ spec:
       containers:
         - name: publicsafety
           image: 861142265676.dkr.ecr.us-east-2.amazonaws.com/publicsafety-ecr:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           livenessProbe:

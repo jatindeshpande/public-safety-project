@@ -55,5 +55,3 @@ jobs:
       - name: Deploy to EKS
         run: |
           kubectl apply -f eks-app/k8s/
-          kubectl rollout restart deployment/publicsafety
-          kubectl rollout status deployment/publicsafety --timeout=2m
